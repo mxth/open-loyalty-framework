@@ -37,17 +37,17 @@ class AddPointsFormType extends AbstractType
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $customers = $this->customerDetailsRepository->findAll();
-        $customerChoices = [];
-        /** @var CustomerDetails $customer */
-        foreach ($customers as $customer) {
-            $customerChoices[$customer->getId()] = $customer->getId();
-        }
+        // $customers = $this->customerDetailsRepository->findAll();
+        // $customerChoices = [];
+        // /** @var CustomerDetails $customer */
+        // foreach ($customers as $customer) {
+        //     $customerChoices[$customer->getId()] = $customer->getId();
+        // }
 
         $builder->add('customer', ChoiceType::class, [
             'required' => true,
             'constraints' => [new NotBlank()],
-            'choices' => $customerChoices,
+            // 'choices' => $customerChoices,
         ]);
 
         $builder->add('points', NumberType::class, [
