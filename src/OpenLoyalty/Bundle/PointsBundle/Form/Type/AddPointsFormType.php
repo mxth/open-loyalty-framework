@@ -44,10 +44,9 @@ class AddPointsFormType extends AbstractType
         //     $customerChoices[$customer->getId()] = $customer->getId();
         // }
 
-        $builder->add('customer', ChoiceType::class, [
+        $builder->add('customer', TextType::class, [
             'required' => true,
             'constraints' => [new NotBlank()],
-            // 'choices' => $customerChoices,
         ]);
 
         $builder->add('points', NumberType::class, [
